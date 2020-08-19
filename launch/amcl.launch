@@ -7,16 +7,37 @@
     <node name="amcl" pkg="amcl" type="amcl" output="screen">
         <!-- <remap from="scan" to="my_robot/laser/scan"/> -->
         <param name="odom_frame_id" value="odom"/>
-        <param name="odom_model_type" value="diff-corrected"/>
         <param name="base_frame_id" value="robot_footprint"/>
         <param name="global_frame_id" value="map"/>
 
-        <!-- If you choose to define initial pose here -->
+        <!-- Overall filter -->
         <param name="initial_pose_x" value="0"/>
         <param name="initial_pose_y" value="0"/>
-        <param name="initial_pose_a" value="1.5707"/>
-        <param name="min_particles" value="200"/>
-        <param name="max_particles" value="10000"/>
+        <param name="initial_pose_a" value="-1.5707"/>
+        <param name="min_particles" value="500"/>
+        <param name="max_particles" value="1000"/>
+        <param name="update_min_d" value="0.04"/>
+        <param name="update_min_a" value="0.26"/>
+        <param name="resample_interval" value="3"/>
+        <param name="transform_tolerance" value="0.7"/>
+
+        <!-- Laser -->
+        <param name="laser_model_type" value="likelihood_field"/>
+        <param name="laser_min_range" value="0.02"/>
+        <param name="laser_max_range" value="5"/>
+
+        <param name="laser_max_beams" value="35"/>
+        
+        <param name="laser_z_hit" value="0.7"/>
+        <param name="laser_z_rand" value="0.1"/>
+
+        <!-- Odometry -->
+        <param name="odom_model_type" value="diff-corrected"/>
+        <param name="odom_alpha1" value="0.2"/>
+        <param name="odom_alpha2" value="0.2"/>
+        <param name="odom_alpha3" value="0.2"/>
+        <param name="odom_alpha4" value="0.2"/>
+        
     </node>
 
     <!-- Move Base -->
