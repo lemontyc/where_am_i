@@ -28,16 +28,16 @@
 
         <param name="laser_max_beams" value="35"/>
         
-        <param name="laser_z_hit" value="0.7"/>
-        <param name="laser_z_rand" value="0.1"/>
+        <param name="laser_z_hit" value="0.8"/>
+        <param name="laser_z_rand" value="0.2"/>
 
         <!-- Odometry -->
         <param name="odom_model_type" value="diff-corrected"/>
-        <param name="odom_alpha1" value="0.2"/>
-        <param name="odom_alpha2" value="0.2"/>
-        <param name="odom_alpha3" value="0.2"/>
-        <param name="odom_alpha4" value="0.2"/>
-        
+        <param name="odom_alpha1" value="0.0001"/>
+        <param name="odom_alpha2" value="0.0001"/>
+        <param name="odom_alpha3" value="0.0001"/>
+        <param name="odom_alpha4" value="0.0001"/>
+        0
     </node>
 
     <!-- Move Base -->
